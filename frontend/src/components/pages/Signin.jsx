@@ -6,7 +6,7 @@ import InputBox from '../InputBox';
 import SubHeading from '../SubHeading';
 import axios from '../../axios';
 import { useNavigate } from 'react-router-dom';
-import bgImg from '../../assets/imgs/bgImg.jpg';
+import bg from '../../assets/imgs/bg.jpg';
 import EyeComponent from '../Eyecomponent';
 import { useAuth } from '../../context/AuthContext';
 
@@ -75,7 +75,7 @@ const Signin = () => {
 			<div>
 				<div className=' absolute top-0 h-[100dvh] min-w-[320px] w-[100dvw]  z-0 mix-blend-overlay'>
 					<img
-						src={bgImg}
+						src={bg}
 						alt=''
 						className='object-cover opacity-95 sm:opacity-100 min-w-[320px] min-h-fit h-[100dvh] w-[100dvw] '
 					/>
