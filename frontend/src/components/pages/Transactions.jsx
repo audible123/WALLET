@@ -5,9 +5,9 @@ import { useRecoilState, useSetRecoilState } from 'recoil';
 import { transactionAtom } from '../../store/atom/TransactionInfo';
 import TransactionDiv from '../TransactionDiv';
 import axios from '../../axios';
-import noTran from '../assets/imgs/no-transaction.png';
+import noTran from '../../assets/imgs/no-transaction.png';
 import { SideBarOpen } from '../../store/atom/sideBarAtom';
-import loading from '../assets/imgs/Loading Square.gif';
+import loading from '../../assets/imgs/Loading Square.gif';
 
 const Transactions = () => {
 	const [transactions, setTransactions] = useState([]);

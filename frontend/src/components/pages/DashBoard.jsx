@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { SideBar } from '../components/SideBar';
-import Balance from '../components/Balance';
-import Users from '../components/Users';
-import History from '../components/History';
-import Header from '../components/Header';
-import TransactionBox from '../components/TransactionBox';
+import { SideBar } from '../SideBar';
+import Balance from '../Balance';
+import Users from '../Users';
+import History from '../History';
+import Header from '../Header';
+import TransactionBox from '../TransactionBox';
 import { useRecoilState } from 'recoil';
-import { transactionAtom } from '../store/atom/TransactionInfo';
+import { transactionAtom } from '../../store/atom/TransactionInfo';
 import { useMemo } from 'react';
-import axios from '../axios';
-import loading from '../assets/imgs/Loading Square.gif';
+import axios from '../../axios';
+import loading from '../../assets/imgs/Loading Square.gif';
 
 const DashBoard = () => {
 	const [info, setInfo] = useRecoilState(transactionAtom);

@@ -1,5 +1,5 @@
 import React from 'react'
-import nf from '../assets/imgs/404 Error-bro.svg'
+import nf from '../../assets/imgs/404 Error-bro.svg'
 const NotFound = () => {
   return (
 		<div className='flex justify-center items-center bg-black'>

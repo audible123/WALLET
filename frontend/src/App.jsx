@@ -1,14 +1,14 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext'; // Import your AuthProvider
-import PrivateRoute from './pages/PrivateRoute'; // Import your PrivateRoute component
-import Signup from './pages/Signup';
-import Signin from './pages/Signin';
-import DashBoard from './pages/DashBoard';
-import SendMoney from './pages/SendMoney';
-import Settings from './pages/Settings';
-import Transactions from './pages/Transactions';
+import PrivateRoute from './components/pages/PrivateRoute';
+import Signup from './components/pages/Signup';
+import Signin from './components/pages/Signin';
+import DashBoard from './components/pages/DashBoard';
+import SendMoney from './components/pages/SendMoney';
+import Settings from './components/pages/Settings';
+import Transactions from './components/pages/Transactions';
 import { RecoilRoot } from 'recoil';
-import NotFound from './pages/NotFound';
+import NotFound from './components/pages/NotFound';
 
 function App() {
 	const { authenticated } = useAuth();

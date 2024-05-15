@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import BottomWarning from '../components/BottomWarning';
-import Button from '../components/Button';
-import Heading from '../components/Heading';
-import InputBox from '../components/InputBox';
-import SubHeading from '../components/SubHeading';
-import axios from '../axios';
+import BottomWarning from '../BottomWarning';
+import Button from '../Button';
+import Heading from '../Heading';
+import InputBox from '../InputBox';
+import SubHeading from '../SubHeading';
+import axios from '../../axios';
 import { useNavigate } from 'react-router-dom';
-import bgImg from '../assets/imgs/bgImg.jpg';
-import username from '../assets/icons/username.svg';
-import EyeComponent from '../components/Eyecomponent';
-import { useAuth } from '../context/AuthContext';
+import bgImg from '../../assets/imgs/bgImg.jpg';
+import username from '../../assets/icons/username.svg';
+import EyeComponent from '../Eyecomponent';
+import { useAuth } from '../../context/AuthContext';
 
 const Signup = () => {
 	const {login} = useAuth();

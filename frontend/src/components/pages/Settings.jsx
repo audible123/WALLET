@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { SideBar } from '../components/SideBar';
-import Balance from '../components/Balance';
-import Users from '../components/Users';
-import History from '../components/History';
-import Header from '../components/Header';
-import axios from '../axios';
+import { SideBar } from '../SideBar';
+import axios from '../../axios';
 import { useNavigate } from 'react-router-dom';
-import { SideBarOpen } from '../store/atom/sideBarAtom';
+import { SideBarOpen } from '../../store/atom/sideBarAtom';
 import { useSetRecoilState } from 'recoil';
 const Settings = () => {
 	const setSideBarOpen = useSetRecoilState(SideBarOpen);

@@ -1,9 +1,9 @@
 // PrivateRoute.js
-import axios from '../axios';
+import axios from '../../axios';
 import React, { useEffect, useState } from 'react';
 import { Route, Navigate, useLocation } from 'react-router-dom'; // Changed import to use Navigate
-import { useAuth } from '../context/AuthContext';
-import loadingimg from '../assets/imgs/Loading Square.gif';
+import { useAuth } from '../../context/AuthContext';
+import loadingimg from '../../assets/imgs/Loading Square.gif';
 const PrivateRoute = ({ children }) => {
 	const [loading,setLoading] = useState('true')
 	const { authenticated, setAuthenticated } = useAuth();

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import SendMoneyBox from '../components/SendMoneyBox';
+import SendMoneyBox from '../SendMoneyBox';
 import { Navigate, useNavigate, useSearchParams } from 'react-router-dom';
 
 const SendMoney = () => {
