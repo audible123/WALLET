@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import logo from '../assets/imgs/logo.png';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
+import originalLogo from '../assets/imgs/originalLogo.png'
 import { useRecoilState } from 'recoil';
 import { SideBarOpen } from '../store/atom/sideBarAtom';
 import { useAuth } from '../context/AuthContext';
@@ -64,9 +64,9 @@ export const SideBar = ({active}) => {
 			>
 				<div className='flex justify-center w-fit'>
 					<img
-						src={logo}
+						src={originalLogo}
 						alt=''
-						className='h-[70px]]'
+						className='h-28 mt-5'
 					/>
 				</div>
 				<div className='flex flex-col w-full mb-[150px]'>
