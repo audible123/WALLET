@@ -1,12 +1,11 @@
-import React, { useEffect, useState, Suspense } from "react";
+import React, { useEffect, Suspense } from "react";
 import { SideBar } from "../SideBar";
-// import Balance from "../Balance";
 import Users from "../Users";
 import TransactionBox from "../TransactionBox";
 import { useRecoilState } from "recoil";
 import { transactionAtom } from "../../store/atom/TransactionInfo";
-import axios from "../../axios";
 import loading from "../../assets/imgs/Loading Square.gif";
+import useDashboardInfo from "../../hooks/useDashboardInfo";
 
 const History = React.lazy(() => import("../History"));
 const Header = React.lazy(() => import("../Header"));
@@ -14,36 +13,7 @@ const Balance = React.lazy(() => import("../Balance"));
 
 const DashBoard = () => {
   const [info, setInfo] = useRecoilState(transactionAtom);
-  const [errMsg, setErrMsg] = useState("");
-  const [dashboardInfo, setDashBoardInfo] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchDashboardInfo = async () => {
-      const token = `Bearer ${localStorage.getItem("token")}`;
-      try {
-        const response = await axios({
-          method: "get",
-          url: "/user/dashboard",
-          headers: {
-            authorization: token,
-          },
-        });
-
-        setDashBoardInfo(response?.data);
-        setIsLoading(false);
-      } catch (error) {
-        setIsLoading(false);
-        if (!error?.response) {
-          setErrMsg("No Server Response");
-        } else {
-          setErrMsg(error?.response?.data?.message || "Failed to fetch data");
-        }
-      }
-    };
-
-    fetchDashboardInfo();
-  }, []);
+  const { dashboardInfo, errMsg, isLoading } = useDashboardInfo();
 
   useEffect(() => {
     if (dashboardInfo.firstName) {
@@ -88,9 +58,9 @@ const DashBoard = () => {
         </Suspense>
         <div className="flex justify-center m-auto gap-5 sm:mt-10 w-full sm:w-[70%] md:w-full flex-col md:flex-row">
           <div className="flex flex-col px-3 min-w-[40%] items-center justify-stretch">
-			<Suspense fallback={<div>Loading Balance...</div>}>
-			<Balance amount={dashboardInfo?.balance} />
-			</Suspense>
+            <Suspense fallback={<div>Loading Balance...</div>}>
+              <Balance amount={dashboardInfo?.balance} />
+            </Suspense>
             
             <Suspense fallback={<div>Loading History...</div>}>
               <History transactions={dashboardInfo?.transactions} />
